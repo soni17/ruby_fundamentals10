@@ -15,16 +15,12 @@ hash = {
                 }
         }
 
+room201Capacity = hash[:data][:rooms][0][:capacity]
+puts "Capacity of room 201 is #{room201Capacity}"
 
-def get_capacity_of_201(arg)
 
-  arg[:data][:rooms].each do |item|
-    if ( item[:room_number] == "201" )
-      return item[:capacity]
-    end
+hash[:data][:events].each do |item|
+  if ( item[:room_id] == 1 && item[:attendees] <= room201Capacity )
+     puts "OK: The event has #{item[:attendees]} people and they will fit in a room with capacity of #{room201Capacity}"
   end
-
 end
-
-room201 = get_capacity_of_201(hash)
-puts "Capacity of room 21 is #{room201}"
