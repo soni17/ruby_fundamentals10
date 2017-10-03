@@ -19,8 +19,8 @@ room201Capacity = hash[:data][:rooms][0][:capacity]
 puts "Capacity of room 201 is #{room201Capacity}"
 
 
-hash[:data][:events].each do |item|
-  if ( item[:room_id] == 1 && item[:attendees] <= room201Capacity )
-     puts "OK: The event has #{item[:attendees]} people and they will fit in a room with capacity of #{room201Capacity}"
+hash[:data][:events].each do |event|
+  if ( event[:room_id] == 1 && event[:attendees] <= room201Capacity )
+     puts "OK: The event has #{event[:attendees]} people and they will fit in a room with capacity of #{room201Capacity}"
   end
 end
